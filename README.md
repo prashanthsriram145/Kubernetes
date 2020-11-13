@@ -19,3 +19,8 @@
  - kubectl get service
  - kubectl get service
 - minikube service kubia-http - TO GET ENDPONT FOR ACCESSING APPLICATION
+- kubectl scale rc kubia --replicas=2
+- kubectl describe pod kubia-bsnb4
+- kubectl cluster-info | grep dashboard
+- minikube dashboard
+
