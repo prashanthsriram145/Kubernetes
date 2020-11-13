@@ -1,0 +1,21 @@
+ - docker exec -i -t 1b3330603243 sh
+ - docker stop 1b3330603243
+ - docker ps
+ - kubectl get pods
+ - kubectl get namespace
+ - docker images 
+ - kubectl delete rc kubia
+ - kubectl get rc
+ - kubectl get replicationcontroller
+ - kubectl get service
+ - docker login
+- docker create -t kubia .
+ - docker tag kubia prashanthsriram145/kubia
+ - docker push prashanthsriram145/kubia
+ - kubectl run kubia --image=prashanthsriram145/kubia --port=8080 --generator=run/v1
+ - kubectl delete rc kubia
+ - kubectl run kubia --image=prashanthsriram145/kubia --port=8080 --generator=run/v1
+ - kubectl expose rc kubia --type=LoadBalancer --name kubia-http
+ - kubectl get service
+ - kubectl get service
+- minikube service kubia-http - TO GET ENDPONT FOR ACCESSING APPLICATION
