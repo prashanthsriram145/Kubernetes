@@ -24,3 +24,27 @@
 - kubectl cluster-info | grep dashboard
 - minikube dashboard
 
+SECOND:
+- kubectl get pod kubia-bsnb4 -o yaml
+kubectl apply -f kubia-manual.yaml 
+- kubectl apply -f kubia-manual.yaml 
+- kubectl delete service kubia-http
+- kubectl logs kubia-manual
+- kubectl port-forward kubia-manual 8888:8080
+- kubectl apply -f kubia-manual-with-labels.yaml 
+- kubectl get pods --show-labels
+- kubectl get pods -L cration_method,env
+- kubectl get pod kubia-manual-v2 env=debug --overwrite
+- kubectl label pod kubia-manual-v2 env=debug --overwrite
+- kubectl get pods -l env=debug
+- kubectl get pods -l '!env1'
+- kubectl apply -f kubia-gpu.yml 
+- kubectl get ns
+- kubectl apply -f custom-namespace.yml 
+- kubectl get namespace
+- kubectl config set-context --current --namespace custom-namespace
+- kubectl delete pod kubia-gpu
+- kubectl delete pods -l env=prod
+- kubectl delete pods --all
+- kubectl delete namespace custom-namespace
+- kubectl delete all --all

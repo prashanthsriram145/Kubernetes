@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubia-gpu
+  labels:
+    env: dev
+spec:
+  nodeSelector:
+    gpu: "true"
+  containers:
+    - image: prashanthsriram145/kubia
+      name: kubia
+      ports:
+        - containerPort: 8080
+          protocol: TCP
+
+
