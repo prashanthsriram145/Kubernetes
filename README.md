@@ -48,3 +48,4 @@ kubectl apply -f kubia-manual.yaml
 - kubectl delete pods --all
 - kubectl delete namespace custom-namespace
 - kubectl delete all --all
+- kubectl logs kubia-liveness --previous
