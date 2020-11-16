@@ -49,3 +49,13 @@ kubectl apply -f kubia-manual.yaml
 - kubectl delete namespace custom-namespace
 - kubectl delete all --all
 - kubectl logs kubia-liveness --previous
+
+- minikube start
+- kubectl port-forward kubia-pod-emptydir 8080:80
+- kubectl exec -i -t gitrepo-volume-pod sh
+- kubectl describe pv mongodb-pv
+- kubectl get pv
+- kubectl get pvc
+- kubectl logs mongodb-pvc
+- kubectl get sc
+
