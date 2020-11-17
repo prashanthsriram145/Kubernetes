@@ -59,3 +59,20 @@ kubectl apply -f kubia-manual.yaml
 - kubectl logs mongodb-pvc
 - kubectl get sc
 
+- kubectl create configmap sameple-cm --from-literal=foo=bar
+- kubectl get configmap sameple-cm -o yaml
+- kubectl create configmap my-config --from-file=config-file.conf
+- kubectl create configmap my-config --from-file=/path/to/dir
+
+
+- kubectl get secrets
+- kubectl get secret fortune-https -o yaml
+- kubectl edit configmap fortune-config
+- kubectl logs fortune-https -c web-server
+- kubectl port-forward fortune-https 8443:443
+- kubectl port-forward fortune-https 8443:443 &
+- curl https://localhost:8443 -k -v
+- kubectl exec fortune-https -c web-server -- mount | grep certs
+- kubectl create secret docker-registry mydockerhubsecret --docker-username=myusername --docker-password=mypassword --docker-email=my.email@provider.com
+
+
