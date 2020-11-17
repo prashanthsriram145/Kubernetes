@@ -76,3 +76,24 @@ kubectl apply -f kubia-manual.yaml
 - kubectl create secret docker-registry mydockerhubsecret --docker-username=myusername --docker-password=mypassword --docker-email=my.email@provider.com
 
 
+  - kubectl exec downward env
+  - kubectl exec downward-volume ls  /etc/downward
+  - kubectl exec downward-volume cat /etc/downward/labels
+  - kubectl cluster-info
+  - kubectl proxy &
+  - curl localhost:8001
+  - curl http://localhost:8001/apis/batch/v1/jobs
+  - curl http://localhost:8001/apis/batch/v1/namespaces/default/jobs/my-job
+  - kubectl logs curl-with-ambassador -c main
+  - kubectl logs curl-with-ambassador -c ambassador
+ - curl --cacert /var/run/secrets/kubernetes.io/serviceaccount/ca.crt https://10.96.0.1:443
+- export CURL_CA_BUNDLE=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+- curl https://kubernetes
+- TOKEN=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)
+- curl -H "Authorization: Bearer $TOKEN" https://kubernetes
+- kubectl create clusterrolebinding permissive-binding --clusterrole=cluster-admin --group=system:serviceaccounts
+- NS=$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace)
+ - curl -H "Authorization: Bearer $TOKEN" https://kubernetes/api/v1/namespaces/$NS/pods
+  
+
+
