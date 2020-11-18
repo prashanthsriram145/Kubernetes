@@ -95,5 +95,16 @@ kubectl apply -f kubia-manual.yaml
 - NS=$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace)
  - curl -H "Authorization: Bearer $TOKEN" https://kubernetes/api/v1/namespaces/$NS/pods
   
-
-
+579  kubectl apply -f kubia-rc-service-v1.yml 
+  583  minikube service kubia
+  584  while true; do curl http://192.168.99.105:30005; done
+  585  kubectl delete rc --all
+  586  kubectl apply -f kubia-deployment-v1.yml 
+  587  kubectl get deployments
+  588  kubectl rollout status deployment kubia
+  590  kubectl get replicasets
+  591  kubectl patch deployment kubia -p '{"spec": {"minReadySeconds": 10}}'
+kubectl set image deployment kubia nodejs=luksa/kubia:v4
+kubectl rollout pause deployment kubia
+kubectl rollout resume deployment kubia
+kubectl rollout status deployment kubia
