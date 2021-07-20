@@ -167,6 +167,18 @@ HELM:
  helm uninstall wordpress
 
 
+helm create guestbook
+  511  rm -rf templates/tests
+  514  helm search hub redis
+  515  helm search repo redis --versions
+  Make changes to Chart.yml and Values.yaml and run below commands:
+  520  helm dependency update guestbook
+  527  helm show values charts/redis-10.5.14.tgz 
+  532  helm install my-guestbook guestbook -n chapter5
+  547  minikube service my-guestbook -n chapter5
+  548  helm uninstall my-guestbook -n chapter5
+  554  kubectl delete pvc -l app=redis -n chapter5
+
 
 
 
